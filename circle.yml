@@ -14,5 +14,5 @@ deployment:
     production:
       branch: master
       commands:
-        - git push git@heroku.com:fuga1.git $CIRCLE_SHA1:master
+        - git push git@heroku.com:fuga1.git +$CIRCLE_SHA1:master
         - make external-test-or-rollback
