@@ -1,0 +1,13 @@
+general:
+  branches:
+    only:
+      - master
+dependencies:
+  override:
+    - make deps:
+        timeout: 600
+test:
+  override:
+    - make test:
+        timeout: 600
+
