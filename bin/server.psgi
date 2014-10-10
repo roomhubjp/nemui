@@ -32,7 +32,7 @@ return sub {
     } else {
       $app->execute (sub {
         my $path = $app->path_segments;
-        my $status = 404;
+        my $status = 401;
         $app->http->set_status ($status);
         $app->send_plain_text (Dumper {
           env => $env,
