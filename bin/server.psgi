@@ -32,12 +32,13 @@ return sub {
     } else {
       $app->execute (sub {
         my $path = $app->path_segments;
-        $app->http->set_status (404);
+        my $status = 404;
+        $app->http->set_status ($status);
         $app->send_plain_text (Dumper {
           env => $env,
           url => $app->http->url->stringify,
           client_ip_addr => $app->http->client_ip_addr->as_text,
-          hoge => 1,
+          status => $status,
         });
         return $app->throw;
       });
